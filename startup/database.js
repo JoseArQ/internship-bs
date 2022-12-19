@@ -5,9 +5,15 @@ const ENV = require('../config');
 
 mongoose.set('strictQuery', true);
 
-let db = ENV.MONGO_URI;
+let db;
+db = `mongodb://${ENV.MONGO_HOST}:${ENV.MONGO_DB_PORT}/${ENV.MONGO_DB_NAME}`;
+
 if (process.env.NODE_ENV === 'test'){
-    db = ENV.MONGO_URI_TEST;
+    db =`mongodb://${ENV.MONGO_HOST}:${ENV.MONGO_DB_PORT}/${ENV.MONGO_DB_NAME_TEST}`;
+}
+
+if (process.env.NODE_ENV === 'prod'){
+    db = `mongodb://${ ENV.MONGOUSER }:${ ENV.MONGOPASSWORD }@${ ENV.MONGOHOST }:${ENV.MONGO_DB_PORT}`;
 }
 
 (async () => {
