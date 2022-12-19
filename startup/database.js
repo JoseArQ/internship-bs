@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'test'){
     db =`mongodb://${ENV.MONGO_HOST}:${ENV.MONGO_DB_PORT}/${ENV.MONGO_DB_NAME_TEST}`;
 }
 
-if (process.env.NODE_ENV === 'prod'){
+if (process.env.NODE_ENV === 'production'){
     db = `mongodb://${ ENV.MONGO_USER }:${ ENV.MONGO_PASSWORD }@${ ENV.MONGO_HOST }:${ENV.MONGO_DB_PORT}/${ENV.MONGO_DB_NAME}`;
 }
 
