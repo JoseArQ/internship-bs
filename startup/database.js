@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'prod'){
 (async () => {
     try {
         await mongoose.connect(db);
-        logger.info(`${db} is connected`);
+        logger.info(`${db} is connected env: ${process.env.NODE_ENV}`);
 
     } catch (ex) {
         logger.error(ex);
