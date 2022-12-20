@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'production'){
 
 (async () => {
     try {
+        logger.info(`trying connecto to ${db}`)
         await mongoose.connect(db);
         logger.info(`${db} is connected env: ${process.env.NODE_ENV}`);
 
