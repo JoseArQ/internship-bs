@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'test'){
 }
 
 if (process.env.NODE_ENV === 'production'){
-    db = `mongodb://${ ENV.MONGO_USER }:${ ENV.MONGO_PASSWORD }@${ ENV.MONGO_HOST }:${ENV.MONGO_DB_PORT}/${ENV.MONGO_DB_NAME}`;
+    db = `mongodb://${ ENV.MONGO_USER }:${ ENV.MONGO_PASSWORD }@${ ENV.MONGO_HOST }:${ENV.MONGO_DB_PORT}`;
 }
 
 (async () => {
